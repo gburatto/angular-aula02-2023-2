@@ -64,6 +64,9 @@ export class TurmaService {
   private _turmas$ = new ReplaySubject<Turma[]>(1);
   public turmas$ = this._turmas$.asObservable();
 
+  private _turmaSelecionada$ = new ReplaySubject<Turma>(1);
+  public turmaSelecionada$ = this._turmaSelecionada$.asObservable();
+
   constructor(
   ) {
     this._turmas$.next(
@@ -77,6 +80,10 @@ export class TurmaService {
         )),
       )),
     );
+  }
+
+  public selecionaTurma(t: Turma): void {
+    this._turmaSelecionada$.next(t);
   }
 
 }

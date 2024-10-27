@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { TurmaService } from '../../services/turma.service';
 import { CommonModule } from '@angular/common';
+import { Turma } from '../../models/turma';
 
 @Component({
   selector: 'app-lista-turmas',
